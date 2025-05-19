@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Web Tools - Smart Tools for Everyday Tasks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .tool-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); }
+        .mobile-menu { display: none; }
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-menu { display: block; }
+            .tool-section h3 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-teal-600 text-white py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Easy Web Tools</h1>
+            <nav class="desktop-nav">
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-teal-200">Home</a></li>
+                    <li><a href="#tools" class="hover:text-teal-200">Tools</a></li>
+                    <li><a href="mailto:myfunandart@gmail.com" class="hover:text-teal-200">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu md:hidden">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden bg-teal-600 text-white py-4">
+        <ul class="container mx-auto px-4 space-y-4">
+            <li><a href="#" class="block hover:text-teal-200">Home</a></li>
+            <li><a href="#tools" class="block hover:text-teal-200">Tools</a></li>
+            <li><a href="mailto:myfunandart@gmail.com" class="block hover:text-teal-200">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-teal-700 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Smart Tools. Fast Results. Zero Hassle.</h2>
+            <p class="text-lg md:text-xl mb-6">Fast and Free Conversion, Calculation, and simplify your everyday tasks</p>
+            <a href="#tools" class="bg-teal-500 hover:bg-teal-400 text-white px-6 py-3 rounded-lg text-lg font-semibold">Get Started</a>
+            <div class="mt-8 max-w-md mx-auto">
+                <div class="relative">
+                    <input type="text" id="tool-search" placeholder="Search a tool..." class="w-full p-3 rounded-lg text-gray-800">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                        <i class="fas fa-search text-teal-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Image Tools -->
+            <div class="tool-section mb-12">
+                <h3 class="text-3xl font-bold mb-2 text-center">🖼 Image Tools</h3>
+                <p class="text-gray-600 mb-6 text-center">Edit and optimize your images with ease.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-image text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Image Converter</h4>
+                        <p class="text-gray-600">Convert images between formats.</p>
+                        <a href="/tools/image-converter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-compress text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Image Compressor</h4>
+                        <p class="text-gray-600">Reduce image file size.</p>
+                        <a href="/tools/image-compressor" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-expand-arrows-alt text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Image Resizer</h4>
+                        <p class="text-gray-600">Resize images to any dimensions.</p>
+                        <a href="/tools/image-resizer" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-text-height text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Image to Text (OCR)</h4>
+                        <p class="text-gray-600">Extract text from images.</p>
+                        <a href="/tools/image-to-text" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Tools -->
+            <div class="tool-section mb-12">
+                <h3 class="text-3xl font-bold mb-2 text-center">📄 Document Tools</h3>
+                <p class="text-gray-600 mb-6 text-center">Manage and convert your documents effortlessly.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-file-word text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">PDF to Word / Word to PDF</h4>
+                        <p class="text-gray-600">Convert between PDF and Word.</p>
+                        <a href="/tools/pdf-word" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-compress-alt text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">PDF Compressor</h4>
+                        <p class="text-gray-600">Reduce PDF file size.</p>
+                        <a href="/tools/pdf-compressor" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-object-group text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">PDF Merger & Splitter</h4>
+                        <p class="text-gray-600">Merge or split PDF files.</p>
+                        <a href="/tools/pdf-merge-split" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-file-alt text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Document Converter</h4>
+                        <p class="text-gray-600">Convert documents to various formats.</p>
+                        <a href="/tools/document-converter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-lock text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">PDF Lock/Unlock</h4>
+                        <p class="text-gray-600">Secure or unlock PDF files.</p>
+                        <a href="/tools/pdf-lock-unlock" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculator Tools -->
+            <div class="tool-section mb-12">
+                <h3 class="text-3xl font-bold mb-2 text-center">🧮 Calculator Tools</h3>
+                <p class="text-gray-600 mb-6 text-center">Perform calculations quickly and accurately.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-calculator text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Scientific Calculator</h4>
+                        <p class="text-gray-600">Advanced mathematical calculations.</p>
+                        <a href="/tools/scientific-calculator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-calendar-alt text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Age Calculator</h4>
+                        <p class="text-gray-600">Calculate age from date of birth.</p>
+                        <a href="/tools/age-calculator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-weight text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">BMI Calculator</h4>
+                        <p class="text-gray-600">Calculate Body Mass Index.</p>
+                        <a href="/tools/bmi-calculator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-money-bill text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Loan EMI Calculator</h4>
+                        <p class="text-gray-600">Estimate loan EMI payments.</p>
+                        <a href="/tools/loan-emi-calculator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-percent text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">GST Calculator</h4>
+                        <p class="text-gray-600">Calculate GST amounts.</p>
+                        <a href="/tools/gst-calculator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-exchange-alt text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Currency Converter</h4>
+                        <p class="text-gray-600">Convert between currencies.</p>
+                        <a href="/tools/currency-converter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Tools -->
+            <div class="tool-section mb-12">
+                <h3 class="text-3xl font-bold mb-2 text-center">🔤 Text Tools</h3>
+                <p class="text-gray-600 mb-6 text-center">Manipulate and analyze text efficiently.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-font text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Text Case Converter</h4>
+                        <p class="text-gray-600">Change text case (upper/lower).</p>
+                        <a href="/tools/text-case-converter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-list-ol text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Word & Character Counter</h4>
+                        <p class="text-gray-600">Count words and characters.</p>
+                        <a href="/tools/word-character-counter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-eraser text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Remove Duplicate Lines</h4>
+                        <p class="text-gray-600">Remove duplicate text lines.</p>
+                        <a href="/tools/remove-duplicate-lines" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-sort-alpha-down text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Text Sorter</h4>
+                        <p class="text-gray-600">Sort text lines alphabetically.</p>
+                        <a href="/tools/text-sorter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-backward text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Text Reverser</h4>
+                        <p class="text-gray-600">Reverse text content.</p>
+                        <a href="/tools/text-reverser" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-lock text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Text Encryptor/Decryptor</h4>
+                        <p class="text-gray-600">Encrypt or decrypt text.</p>
+                        <a href="/tools/text-encryptor" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web/Developer Tools -->
+            <div class="tool-section mb-12">
+                <h3 class="text-3xl font-bold mb-2 text-center">🌐 Web/Developer Tools</h3>
+                <p class="text-gray-600 mb-6 text-center">Tools for developers and webmasters.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-code text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">HTML/CSS/JS Minifier</h4>
+                        <p class="text-gray-600">Minify code for performance.</p>
+                        <a href="/tools/html-css-js-minifier" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-file-code text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">JSON Formatter & Validator</h4>
+                        <p class="text-gray-600">Format and validate JSON.</p>
+                        <a href="/tools/json-formatter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-lock text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Base64 Encoder/Decoder</h4>
+                        <p class="text-gray-600">Encode or decode Base64 data.</p>
+                        <a href="/tools/base64-encoder" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-link text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">URL Encoder/Decoder</h4>
+                        <p class="text-gray-600">Encode or decode URLs.</p>
+                        <a href="/tools/url-encoder" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-palette text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Color Picker & Converter</h4>
+                        <p class="text-gray-600">Pick and convert colors.</p>
+                        <a href="/tools/color-picker" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-code-branch text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Regex Tester</h4>
+                        <p class="text-gray-600">Test regular expressions.</p>
+                        <a href="/tools/regex-tester" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Tools -->
+            <div class="tool-section mb-12">
+                <h3 class="text-3xl font-bold mb-2 text-center">🎨 Color Tools</h3>
+                <p class="text-gray-600 mb-6 text-center">Tools for color selection and manipulation.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-image text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Color Picker from Image</h4>
+                        <p class="text-gray-600">Extract colors from images.</p>
+                        <a href="/tools/color-picker-image" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-palette text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">HEX to RGB Converter</h4>
+                        <p class="text-gray-600">Convert HEX to RGB colors.</p>
+                        <a href="/tools/hex-to-rgb" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-layer-group text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Gradient Generator</h4>
+                        <p class="text-gray-600">Create custom gradients.</p>
+                        <a href="/tools/gradient-generator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-swatchbook text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Palette Generator</h4>
+                        <p class="text-gray-600">Generate color palettes.</p>
+                        <a href="/tools/palette-generator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-eye text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Color Blindness Simulator</h4>
+                        <p class="text-gray-600">Simulate color blindness.</p>
+                        <a href="/tools/color-blindness-simulator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO & Marketing Tools -->
+            <div class="tool-section mb-12">
+                <h3 class="text-3xl font-bold mb-2 text-center">🌍 SEO & Marketing Tools</h3>
+                <p class="text-gray-600 mb-6 text-center">Optimize your content for better reach.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-search text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Keyword Density Checker</h4>
+                        <p class="text-gray-600">Analyze keyword density.</p>
+                        <a href="/tools/keyword-density-checker" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-tags text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Meta Tag Analyzer</h4>
+                        <p class="text-gray-600">Analyze meta tags for SEO.</p>
+                        <a href="/tools/meta-tag-analyzer" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-list-ol text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Word Counter</h4>
+                        <p class="text-gray-600">Count words in your content.</p>
+                        <a href="/tools/word-counter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Utility Tools -->
+            <div class="tool-section mb-12">
+                <h3 class="text-3xl font-bold mb-2 text-center">🛠️ Utility Tools</h3>
+                <p class="text-gray-600 mb-6 text-center">Handy tools for everyday tasks.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-qrcode text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">QR Code Generator & Scanner</h4>
+                        <p class="text-gray-600">Create or scan QR codes.</p>
+                        <a href="/tools/qr-code" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-barcode text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Barcode Generator</h4>
+                        <p class="text-gray-600">Generate barcodes easily.</p>
+                        <a href="/tools/barcode-generator" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-ruler text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Unit Converter</h4>
+                        <p class="text-gray-600">Convert between units.</p>
+                        <a href="/tools/unit-converter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                    <div class="tool-card bg-gray-50 p-6 rounded-lg shadow">
+                        <i class="fas fa-clock text-teal-600 text-2xl mb-2"></i>
+                        <h4 class="text-xl font-semibold">Time Zone Converter</h4>
+                        <p class="text-gray-600">Convert between time zones.</p>
+                        <a href="/tools/time-zone-converter" class="mt-4 inline-block bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
+                <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-xl font-bold">Easy Web Tools</h3>
+                    <p class="text-sm">Simplifying your digital life.</p>
+                </div>
+                <div class="flex-1 text-center">
+                    <h3 class="text-lg font-semibold">Contact</h3>
+                    <a href="mailto:myfunandart@gmail.com" class="text-sm hover:text-teal-200">myfunandart@gmail.com</a>
+                </div>
+                <div class="flex-1 text-center md:text-right">
+                    <h3 class="text-lg font-semibold">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy-policy" class="text-sm hover:text-teal-200">Privacy Policy</a></li>
+                        <li><a href="/terms-of-use" class="text-sm hover:text-teal-200">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-sm">
+                <p>© 2025 Easy Web Tools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Search and Mobile Menu -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('tool-search');
+        const toolCards = document.querySelectorAll('.tool-card');
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            toolCards.forEach(card => {
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(query) || description.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
