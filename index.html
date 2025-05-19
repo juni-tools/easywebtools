@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Web Tools</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-blue-700 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Easy Web Tools</h1>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#tools" class="hover:underline">Tools</a>
+        <a href="mailto:myfunandart@gmail.com" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-100 py-16 text-center px-4">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-blue-800">Smart Tools. Fast Results. Zero Hassle.</h2>
+    <p class="text-xl text-gray-700 mb-6">Fast and Free Conversion, Calculation, and simplify your everyday tasks</p>
+    <a href="#tools" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow transition">Get Started</a>
+
+    <!-- Search Bar -->
+    <div class="mt-10 max-w-2xl mx-auto">
+      <div class="flex items-center border rounded-lg overflow-hidden shadow-sm">
+        <input type="text" placeholder="Search a tool..." class="w-full px-4 py-3 focus:outline-none" id="searchInput" onkeyup="filterTools()" />
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3">
+          🔍
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <main class="max-w-7xl mx-auto px-4 py-12" id="tools">
+
+    <!-- TOOL CATEGORY TEMPLATE -->
+    <!-- Repeat the following section for each category -->
+
+    <!-- 🖼 Image Tools -->
+    <section class="mb-12">
+      <h3 class="text-2xl font-semibold mb-2">🖼 Image Tools</h3>
+      <p class="text-gray-600 mb-4">Edit, convert, and extract image data effortlessly.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="image-tools">
+        <!-- Tool Cards -->
+        <div class="tool-card bg-white p-5 rounded-xl shadow hover:shadow-lg transition" data-name="Image Converter">
+          <h4 class="font-bold mb-2">Image Converter</h4>
+          <p class="text-sm text-gray-600 mb-3">Convert images between formats quickly.</p>
+          <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded">Use Tool</a>
+        </div>
+        <div class="tool-card bg-white p-5 rounded-xl shadow hover:shadow-lg transition" data-name="Image Compressor">
+          <h4 class="font-bold mb-2">Image Compressor</h4>
+          <p class="text-sm text-gray-600 mb-3">Reduce image file size instantly.</p>
+          <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded">Use Tool</a>
+        </div>
+        <!-- Add remaining tools similarly -->
+      </div>
+    </section>
+
+    <!-- Repeat above structure for each category -->
+    <!-- 📄 Document Tools -->
+    <!-- 🧮 Calculator Tools -->
+    <!-- 🔤 Text Tools -->
+    <!-- 🌐 Web/Developer Tools -->
+    <!-- 🎨 Color Tools -->
+    <!-- 🌍 SEO & Marketing Tools -->
+    <!-- 🛠️ Utility Tools -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white px-4 py-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <div class="flex-1 min-w-[150px]">
+        <h1 class="text-xl font-bold">Easy Web Tools</h1>
+        <p class="text-sm">Simplifying your digital life.</p>
+      </div>
+      <div class="flex-1 min-w-[150px] text-center">
+        <p>📧 <a href="mailto:myfunandart@gmail.com" class="underline">myfunandart@gmail.com</a></p>
+      </div>
+      <div class="flex-1 min-w-[150px] text-right">
+        <a href="#" class="text-sm hover:underline">Privacy Policy</a><br />
+        <a href="#" class="text-sm hover:underline">Terms of Use</a>
+      </div>
+    </div>
+    <div class="text-center mt-6 text-sm border-t border-blue-500 pt-4">
+      &copy; 2025 Easy Web Tools. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript for Live Search -->
+  <script>
+    function filterTools() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".tool-card");
+
+      cards.forEach(card => {
+        const name = card.getAttribute("data-name").toLowerCase();
+        card.style.display = name.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
